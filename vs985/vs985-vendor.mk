@@ -35,7 +35,7 @@ PRODUCT_COPY_FILES += \
     vendor/lge/vs985/proprietary/vendor/firmware/venus.b04:system/vendor/firmware/venus.b04 \
     vendor/lge/vs985/proprietary/vendor/firmware/venus.mbn:system/vendor/firmware/venus.mbn \
     vendor/lge/vs985/proprietary/vendor/firmware/venus.mdt:system/vendor/firmware/venus.mdt \
-    vendor/lge/vs985/proprietary/vendor/lib/libril.so:system/vendor/lib/libril.so \
+#    vendor/lge/vs985/proprietary/vendor/lib/libril.so:system/vendor/lib/libril.so \
     vendor/lge/vs985/proprietary/vendor/lib/libuicc.so:system/vendor/lib/libuicc.so \
     vendor/lge/vs985/proprietary/vendor/lib/libvss_common_idl.so:system/vendor/lib/libvss_common_idl.so \
     vendor/lge/vs985/proprietary/vendor/lib/libvss_common_iface.so:system/vendor/lib/libvss_common_iface.so \
