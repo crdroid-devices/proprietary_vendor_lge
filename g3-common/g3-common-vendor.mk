@@ -25,6 +25,8 @@ PRODUCT_COPY_FILES += \
     vendor/lge/g3-common/proprietary/vendor/bin/sensors.qcom:$(TARGET_COPY_OUT_VENDOR)/bin/sensors.qcom \
     vendor/lge/g3-common/proprietary/vendor/bin/thermal-engine:$(TARGET_COPY_OUT_VENDOR)/bin/thermal-engine \
     vendor/lge/g3-common/proprietary/vendor/bin/time_daemon:$(TARGET_COPY_OUT_VENDOR)/bin/time_daemon \
+    vendor/lge/g3-common/proprietary/vendor/bin/wfdservice:$(TARGET_COPY_OUT_VENDOR)/bin/wfdservice \
+    vendor/lge/g3-common/proprietary/vendor/bin/wifidisplayhalservice:$(TARGET_COPY_OUT_VENDOR)/bin/wifidisplayhalservice \
     vendor/lge/g3-common/proprietary/vendor/firmware/DLdata_rev28B_data1.ecl:$(TARGET_COPY_OUT_VENDOR)/firmware/DLdata_rev28B_data1.ecl \
     vendor/lge/g3-common/proprietary/vendor/firmware/DLdata_rev28B_data2.ecl:$(TARGET_COPY_OUT_VENDOR)/firmware/DLdata_rev28B_data2.ecl \
     vendor/lge/g3-common/proprietary/vendor/firmware/DLdata_rev28B_data3.ecl:$(TARGET_COPY_OUT_VENDOR)/firmware/DLdata_rev28B_data3.ecl \
@@ -40,11 +42,18 @@ PRODUCT_COPY_FILES += \
     vendor/lge/g3-common/proprietary/vendor/firmware/cpp_firmware_v1_1_6.fw:$(TARGET_COPY_OUT_VENDOR)/firmware/cpp_firmware_v1_1_6.fw \
     vendor/lge/g3-common/proprietary/vendor/firmware/cpp_firmware_v1_2_0.fw:$(TARGET_COPY_OUT_VENDOR)/firmware/cpp_firmware_v1_2_0.fw \
     vendor/lge/g3-common/proprietary/vendor/firmware/cpp_firmware_v1_2_1.fw:$(TARGET_COPY_OUT_VENDOR)/firmware/cpp_firmware_v1_2_1.fw \
+    vendor/lge/g3-common/proprietary/vendor/etc/init/com.qualcomm.qti.wifidisplayhal@1.0-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/com.qualcomm.qti.wifidisplayhal@1.0-service.rc \
+    vendor/lge/g3-common/proprietary/vendor/etc/init/wfdservice.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/wfdservice.rc \
     vendor/lge/g3-common/proprietary/vendor/etc/permissions/qcnvitems.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/qcnvitems.xml \
     vendor/lge/g3-common/proprietary/vendor/etc/permissions/qcrilhook.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/qcrilhook.xml \
     vendor/lge/g3-common/proprietary/vendor/etc/sensors/sensor_def_common.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/sensor_def_common.conf \
+    vendor/lge/g3-common/proprietary/vendor/etc/wfdconfig.xml:$(TARGET_COPY_OUT_VENDOR)/etc/wfdconfig.xml \
+    vendor/lge/g3-common/proprietary/vendor/etc/wfdconfigsink.xml:$(TARGET_COPY_OUT_VENDOR)/etc/wfdconfigsink.xml \
     vendor/lge/g3-common/proprietary/vendor/framework/qcnvitems.jar:$(TARGET_COPY_OUT_VENDOR)/framework/qcnvitems.jar \
     vendor/lge/g3-common/proprietary/vendor/framework/qcrilhook.jar:$(TARGET_COPY_OUT_VENDOR)/framework/qcrilhook.jar \
+    vendor/lge/g3-common/proprietary/vendor/lib/com.qualcomm.qti.wifidisplayhal@1.0-halimpl.so:$(TARGET_COPY_OUT_VENDOR)/lib/com.qualcomm.qti.wifidisplayhal@1.0-halimpl.so \
+    vendor/lge/g3-common/proprietary/vendor/lib/com.qualcomm.qti.wifidisplayhal@1.0.so:$(TARGET_COPY_OUT_VENDOR)/lib/com.qualcomm.qti.wifidisplayhal@1.0.so \
+    vendor/lge/g3-common/proprietary/vendor/lib/extractors/libmmparser.so:$(TARGET_COPY_OUT_VENDOR)/lib/extractors/libmmparser.so \
     vendor/lge/g3-common/proprietary/vendor/lib/hw/camera.vendor.msm8974.so:$(TARGET_COPY_OUT_VENDOR)/lib/hw/camera.vendor.msm8974.so \
     vendor/lge/g3-common/proprietary/vendor/lib/hw/consumerir.msm8974.so:$(TARGET_COPY_OUT_VENDOR)/lib/hw/consumerir.msm8974.so \
     vendor/lge/g3-common/proprietary/vendor/lib/libHDR.so:$(TARGET_COPY_OUT_VENDOR)/lib/libHDR.so \
@@ -53,16 +62,46 @@ PRODUCT_COPY_FILES += \
     vendor/lge/g3-common/proprietary/vendor/lib/libalmcaswrap.so:$(TARGET_COPY_OUT_VENDOR)/lib/libalmcaswrap.so \
     vendor/lge/g3-common/proprietary/vendor/lib/libarcsoft_beauty_shot.so:$(TARGET_COPY_OUT_VENDOR)/lib/libarcsoft_beauty_shot.so \
     vendor/lge/g3-common/proprietary/vendor/lib/libcir_driver.so:$(TARGET_COPY_OUT_VENDOR)/lib/libcir_driver.so \
+    vendor/lge/g3-common/proprietary/vendor/lib/libFileMux.so:$(TARGET_COPY_OUT_VENDOR)/lib/libFileMux.so \
     vendor/lge/g3-common/proprietary/vendor/lib/libloc_api_v02.so:$(TARGET_COPY_OUT_VENDOR)/lib/libloc_api_v02.so \
     vendor/lge/g3-common/proprietary/vendor/lib/libloc_ds_api.so:$(TARGET_COPY_OUT_VENDOR)/lib/libloc_ds_api.so \
     vendor/lge/g3-common/proprietary/vendor/lib/libmm-qcamera.so:$(TARGET_COPY_OUT_VENDOR)/lib/libmm-qcamera.so \
     vendor/lge/g3-common/proprietary/vendor/lib/libmmcamera_interface.so:$(TARGET_COPY_OUT_VENDOR)/lib/libmmcamera_interface.so \
     vendor/lge/g3-common/proprietary/vendor/lib/libmmjpeg_interface.so:$(TARGET_COPY_OUT_VENDOR)/lib/libmmjpeg_interface.so \
+    vendor/lge/g3-common/proprietary/vendor/lib/libmmosal.so:$(TARGET_COPY_OUT_VENDOR)/lib/libmmosal.so \
+    vendor/lge/g3-common/proprietary/vendor/lib/libmmosal_proprietary.so:$(TARGET_COPY_OUT_VENDOR)/lib/libmmosal_proprietary.so \
+    vendor/lge/g3-common/proprietary/vendor/lib/libmmparser_lite.so:$(TARGET_COPY_OUT_VENDOR)/lib/libmmparser_lite.so \
+    vendor/lge/g3-common/proprietary/vendor/lib/libmmrtpdecoder.so:$(TARGET_COPY_OUT_VENDOR)/lib/libmmrtpdecoder.so \
+    vendor/lge/g3-common/proprietary/vendor/lib/libmmrtpencoder.so:$(TARGET_COPY_OUT_VENDOR)/lib/libmmrtpencoder.so \
     vendor/lge/g3-common/proprietary/vendor/lib/libmorpho_image_stab31.so:$(TARGET_COPY_OUT_VENDOR)/lib/libmorpho_image_stab31.so \
     vendor/lge/g3-common/proprietary/vendor/lib/libmorpho_noise_reduction.so:$(TARGET_COPY_OUT_VENDOR)/lib/libmorpho_noise_reduction.so \
     vendor/lge/g3-common/proprietary/vendor/lib/libmorpho_video_denoiser.so:$(TARGET_COPY_OUT_VENDOR)/lib/libmorpho_video_denoiser.so \
+    vendor/lge/g3-common/proprietary/vendor/lib/libOmxMux.so:$(TARGET_COPY_OUT_VENDOR)/lib/libOmxMux.so \
+    vendor/lge/g3-common/proprietary/vendor/lib/libOmxVideoDSMode.so:$(TARGET_COPY_OUT_VENDOR)/lib/libOmxVideoDSMode.so \
     vendor/lge/g3-common/proprietary/vendor/lib/libqomx_core.so:$(TARGET_COPY_OUT_VENDOR)/lib/libqomx_core.so \
     vendor/lge/g3-common/proprietary/vendor/lib/librmnetctl.so:$(TARGET_COPY_OUT_VENDOR)/lib/librmnetctl.so \
+    vendor/lge/g3-common/proprietary/vendor/lib/libwfdavenhancements.so:$(TARGET_COPY_OUT_VENDOR)/lib/libwfdavenhancements.so \
+    vendor/lge/g3-common/proprietary/vendor/lib/libwfdclient.so:$(TARGET_COPY_OUT_VENDOR)/lib/libwfdclient.so \
+    vendor/lge/g3-common/proprietary/vendor/lib/libwfdcodecv4l2.so:$(TARGET_COPY_OUT_VENDOR)/lib/libwfdcodecv4l2.so \
+    vendor/lge/g3-common/proprietary/vendor/lib/libwfdcommonutils.so:$(TARGET_COPY_OUT_VENDOR)/lib/libwfdcommonutils.so \
+    vendor/lge/g3-common/proprietary/vendor/lib/libwfdconfigutils.so:$(TARGET_COPY_OUT_VENDOR)/lib/libwfdconfigutils.so \
+    vendor/lge/g3-common/proprietary/vendor/lib/libwfdmminterface.so:$(TARGET_COPY_OUT_VENDOR)/lib/libwfdmminterface.so \
+    vendor/lge/g3-common/proprietary/vendor/lib/libwfdmmsink.so:$(TARGET_COPY_OUT_VENDOR)/lib/libwfdmmsink.so \
+    vendor/lge/g3-common/proprietary/vendor/lib/libwfdmmsrc.so:$(TARGET_COPY_OUT_VENDOR)/lib/libwfdmmsrc.so \
+    vendor/lge/g3-common/proprietary/vendor/lib/libwfdnative.so:$(TARGET_COPY_OUT_VENDOR)/lib/libwfdnative.so \
+    vendor/lge/g3-common/proprietary/vendor/lib/libwfdrtsp.so:$(TARGET_COPY_OUT_VENDOR)/lib/libwfdrtsp.so \
+    vendor/lge/g3-common/proprietary/vendor/lib/libwfdservice.so:$(TARGET_COPY_OUT_VENDOR)/lib/libwfdservice.so \
+    vendor/lge/g3-common/proprietary/vendor/lib/libwfdsm.so:$(TARGET_COPY_OUT_VENDOR)/lib/libwfdsm.so \
+    vendor/lge/g3-common/proprietary/vendor/lib/libwfduibcinterface.so:$(TARGET_COPY_OUT_VENDOR)/lib/libwfduibcinterface.so \
+    vendor/lge/g3-common/proprietary/vendor/lib/libwfduibcsink.so:$(TARGET_COPY_OUT_VENDOR)/lib/libwfduibcsink.so \
+    vendor/lge/g3-common/proprietary/vendor/lib/libwfduibcsinkinterface.so:$(TARGET_COPY_OUT_VENDOR)/lib/libwfduibcsinkinterface.so \
+    vendor/lge/g3-common/proprietary/vendor/lib/libwfduibcsrc.so:$(TARGET_COPY_OUT_VENDOR)/lib/libwfduibcsrc.so \
+    vendor/lge/g3-common/proprietary/vendor/lib/libwfduibcsrcinterface.so:$(TARGET_COPY_OUT_VENDOR)/lib/libwfduibcsrcinterface.so \
+    vendor/lge/g3-common/proprietary/vendor/lib/libwfdcommonutils_proprietary.so:$(TARGET_COPY_OUT_VENDOR)/lib/libwfdcommonutils_proprietary.so \
+    vendor/lge/g3-common/proprietary/vendor/lib/libwfdhaldsmanager.so:$(TARGET_COPY_OUT_VENDOR)/lib/libwfdhaldsmanager.so \
+    vendor/lge/g3-common/proprietary/vendor/lib/libwfdhdcpcp.so:$(TARGET_COPY_OUT_VENDOR)/lib/libwfdhdcpcp.so \
+    vendor/lge/g3-common/proprietary/vendor/lib/libwfdmmservice.so:$(TARGET_COPY_OUT_VENDOR)/lib/libwfdmmservice.so \
+    vendor/lge/g3-common/proprietary/vendor/lib/libwfdmodulehdcpsession.so:$(TARGET_COPY_OUT_VENDOR)/lib/libwfdmodulehdcpsession.so \
     vendor/lge/g3-common/proprietary/vendor/firmware/wcnss.b00:$(TARGET_COPY_OUT_VENDOR)/firmware/wcnss.b00 \
     vendor/lge/g3-common/proprietary/vendor/firmware/wcnss.b01:$(TARGET_COPY_OUT_VENDOR)/firmware/wcnss.b01 \
     vendor/lge/g3-common/proprietary/vendor/firmware/wcnss.b02:$(TARGET_COPY_OUT_VENDOR)/firmware/wcnss.b02 \
@@ -192,5 +231,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libtime_genoff \
     TimeService \
+    WfdService \
     shutdownlistener \
-    qcrilmsgtunnel
+    qcrilmsgtunnel \
+    WfdCommon
